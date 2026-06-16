@@ -19,6 +19,9 @@ export default function OnboardingPage() {
     naics: '',
     notes: '',
     website: '',
+    social_instagram: '',
+    social_facebook: '',
+    social_tiktok: '',
     brand_themes: '',
     brand_colors: '',
     brand_fonts: '',
@@ -123,6 +126,35 @@ export default function OnboardingPage() {
                   placeholder="https://www.tuempresa.com"
                   type="url"
                 />
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <label className={labelClass}>Instagram</label>
+                  <input
+                    className={inputClass}
+                    value={form.social_instagram}
+                    onChange={e => setForm(f => ({ ...f, social_instagram: e.target.value }))}
+                    placeholder="@usuario"
+                  />
+                </div>
+                <div>
+                  <label className={labelClass}>Facebook</label>
+                  <input
+                    className={inputClass}
+                    value={form.social_facebook}
+                    onChange={e => setForm(f => ({ ...f, social_facebook: e.target.value }))}
+                    placeholder="@página"
+                  />
+                </div>
+                <div>
+                  <label className={labelClass}>TikTok</label>
+                  <input
+                    className={inputClass}
+                    value={form.social_tiktok}
+                    onChange={e => setForm(f => ({ ...f, social_tiktok: e.target.value }))}
+                    placeholder="@usuario"
+                  />
+                </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>

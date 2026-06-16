@@ -87,6 +87,26 @@ export default async function ClientProfilePage({ params }: { params: Promise<{ 
                 <dt className="text-xs text-gray-400 uppercase tracking-wide">NAICS</dt>
                 <dd className="text-sm text-gray-900 mt-0.5">{client.naics || '—'}</dd>
               </div>
+              {client.website && (
+                <div>
+                  <dt className="text-xs text-gray-400 uppercase tracking-wide">Website</dt>
+                  <dd className="text-sm mt-0.5">
+                    <a href={client.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                      {client.website.replace(/^https?:\/\//, '')}
+                    </a>
+                  </dd>
+                </div>
+              )}
+              {(client.social_instagram || client.social_facebook || client.social_tiktok) && (
+                <div>
+                  <dt className="text-xs text-gray-400 uppercase tracking-wide mb-1">Social</dt>
+                  <dd className="space-y-0.5">
+                    {client.social_instagram && <p className="text-sm text-gray-900">📷 {client.social_instagram}</p>}
+                    {client.social_facebook && <p className="text-sm text-gray-900">👥 {client.social_facebook}</p>}
+                    {client.social_tiktok && <p className="text-sm text-gray-900">🎵 {client.social_tiktok}</p>}
+                  </dd>
+                </div>
+              )}
               {client.keywords?.length > 0 && (
                 <div>
                   <dt className="text-xs text-gray-400 uppercase tracking-wide mb-1">Keywords</dt>

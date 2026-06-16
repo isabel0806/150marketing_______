@@ -24,6 +24,9 @@ export interface Client {
   meta_parameters?: Record<string, unknown>
   naics?: string
   website?: string
+  social_instagram?: string
+  social_facebook?: string
+  social_tiktok?: string
   notes?: string
   created_at: string
   updated_at: string

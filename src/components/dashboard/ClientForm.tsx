@@ -29,6 +29,9 @@ export default function ClientForm({ client }: Props) {
     brand_fonts: client?.brand_fonts ?? '',
     brand_voice: client?.brand_voice ?? '',
     website: client?.website ?? '',
+    social_instagram: client?.social_instagram ?? '',
+    social_facebook: client?.social_facebook ?? '',
+    social_tiktok: client?.social_tiktok ?? '',
   })
 
   const [keywords, setKeywords] = useState<string[]>(client?.keywords ?? ['', '', ''])
@@ -105,6 +108,33 @@ export default function ClientForm({ client }: Props) {
               onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
               placeholder="https://www.empresa.com"
               type="url"
+            />
+          </div>
+          <div>
+            <label className={labelClass}>Instagram</label>
+            <input
+              className={inputClass}
+              value={form.social_instagram}
+              onChange={e => setForm(f => ({ ...f, social_instagram: e.target.value }))}
+              placeholder="@usuario"
+            />
+          </div>
+          <div>
+            <label className={labelClass}>Facebook</label>
+            <input
+              className={inputClass}
+              value={form.social_facebook}
+              onChange={e => setForm(f => ({ ...f, social_facebook: e.target.value }))}
+              placeholder="@página"
+            />
+          </div>
+          <div>
+            <label className={labelClass}>TikTok</label>
+            <input
+              className={inputClass}
+              value={form.social_tiktok}
+              onChange={e => setForm(f => ({ ...f, social_tiktok: e.target.value }))}
+              placeholder="@usuario"
             />
           </div>
           <div>
