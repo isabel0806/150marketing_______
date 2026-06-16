@@ -44,7 +44,7 @@ export default function OnboardingPage() {
     })
 
     if (error) {
-      setError('Something went wrong. Please try again.')
+      setError(error.message)
       setLoading(false)
       return
     }
@@ -52,7 +52,7 @@ export default function OnboardingPage() {
     setSubmitted(true)
   }
 
-  const inputClass = "w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-gray-400 bg-white"
+  const inputClass = "w-full px-4 py-3 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-gray-400 bg-white"
   const labelClass = "block text-sm font-medium text-gray-700 mb-1.5"
 
   if (submitted) {
