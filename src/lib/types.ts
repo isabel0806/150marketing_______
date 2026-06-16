@@ -23,6 +23,7 @@ export interface Client {
   brand_competitors: string[]
   meta_parameters?: Record<string, unknown>
   naics?: string
+  website?: string
   notes?: string
   created_at: string
   updated_at: string

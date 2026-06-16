@@ -18,6 +18,7 @@ export default function OnboardingPage() {
     income_bracket: '',
     naics: '',
     notes: '',
+    website: '',
     brand_themes: '',
     brand_colors: '',
     brand_fonts: '',
@@ -111,6 +112,16 @@ export default function OnboardingPage() {
                   value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                   placeholder="Acme Corp"
+                />
+              </div>
+              <div>
+                <label className={labelClass}>Website</label>
+                <input
+                  className={inputClass}
+                  value={form.website}
+                  onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+                  placeholder="https://www.tuempresa.com"
+                  type="url"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">

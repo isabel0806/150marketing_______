@@ -28,6 +28,7 @@ export default function ClientForm({ client }: Props) {
     brand_colors: client?.brand_colors ?? '',
     brand_fonts: client?.brand_fonts ?? '',
     brand_voice: client?.brand_voice ?? '',
+    website: client?.website ?? '',
   })
 
   const [keywords, setKeywords] = useState<string[]>(client?.keywords ?? ['', '', ''])
@@ -94,6 +95,16 @@ export default function ClientForm({ client }: Props) {
               onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
               required
               placeholder="Acme Corp"
+            />
+          </div>
+          <div className="col-span-2">
+            <label className={labelClass}>Website</label>
+            <input
+              className={inputClass}
+              value={form.website}
+              onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+              placeholder="https://www.empresa.com"
+              type="url"
             />
           </div>
           <div>
