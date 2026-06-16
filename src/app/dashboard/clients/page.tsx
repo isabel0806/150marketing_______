@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
-import { Plus, Search } from 'lucide-react'
+import { Plus, Search, Share2 } from 'lucide-react'
+import CopyLinkButton from '@/components/dashboard/CopyLinkButton'
 
 export default async function ClientsPage() {
   const supabase = await createClient()
@@ -17,13 +18,16 @@ export default async function ClientsPage() {
           <h1 className="text-2xl font-bold text-gray-900">Clients</h1>
           <p className="text-gray-500 text-sm mt-1">{clients?.length ?? 0} total clients</p>
         </div>
-        <Link
-          href="/dashboard/clients/new"
-          className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-        >
-          <Plus size={16} />
-          New Client
-        </Link>
+        <div className="flex items-center gap-2">
+          <CopyLinkButton />
+          <Link
+            href="/dashboard/clients/new"
+            className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+          >
+            <Plus size={16} />
+            Add Client
+          </Link>
+        </div>
       </div>
 
       <div className="bg-white rounded-xl border border-gray-100">
