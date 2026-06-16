@@ -90,8 +90,12 @@ alter table campaign_creatives enable row level security;
 alter table campaign_performance enable row level security;
 alter table weekly_reports enable row level security;
 
--- Allow all authenticated users for now (tighten later)
-create policy "Authenticated users can do everything on clients"
+-- Public onboarding: anyone can insert a new client (for the onboarding form)
+create policy "Public can insert clients"
+  on clients for insert with check (true);
+
+-- Only authenticated users can read/update/delete
+create policy "Authenticated users can read/update/delete clients"
   on clients for all using (auth.role() = 'authenticated');
 
 create policy "Authenticated users can do everything on campaigns"
