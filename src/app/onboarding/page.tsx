@@ -88,7 +88,6 @@ export default function OnboardingPage() {
           </div>
           <span className="text-sm text-gray-400">Step {step} of {totalSteps}</span>
         </div>
-        {/* Progress bar */}
         <div className="h-1 bg-gray-100">
           <div
             className="h-1 bg-black transition-all duration-300"
@@ -123,7 +122,7 @@ export default function OnboardingPage() {
                   className={inputClass}
                   value={form.website}
                   onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
-                  placeholder="https://www.tuempresa.com"
+                  placeholder="https://www.yourwebsite.com"
                   type="url"
                 />
               </div>
@@ -134,7 +133,8 @@ export default function OnboardingPage() {
                     className={inputClass}
                     value={form.social_instagram}
                     onChange={e => setForm(f => ({ ...f, social_instagram: e.target.value }))}
-                    placeholder="@usuario"
+                    placeholder="https://instagram.com/yourpage"
+                    type="url"
                   />
                 </div>
                 <div>
@@ -143,7 +143,8 @@ export default function OnboardingPage() {
                     className={inputClass}
                     value={form.social_facebook}
                     onChange={e => setForm(f => ({ ...f, social_facebook: e.target.value }))}
-                    placeholder="@página"
+                    placeholder="https://facebook.com/yourpage"
+                    type="url"
                   />
                 </div>
                 <div>
@@ -152,7 +153,8 @@ export default function OnboardingPage() {
                     className={inputClass}
                     value={form.social_tiktok}
                     onChange={e => setForm(f => ({ ...f, social_tiktok: e.target.value }))}
-                    placeholder="@usuario"
+                    placeholder="https://tiktok.com/@yourpage"
+                    type="url"
                   />
                 </div>
               </div>
@@ -246,7 +248,7 @@ export default function OnboardingPage() {
               <div>
                 <label className={labelClass}>
                   3 feelings your brand evokes
-                  <span className="text-gray-400 font-normal ml-1">(how customers feel)</span>
+                  <span className="text-gray-400 font-normal ml-1">(how customers feel when they interact with you)</span>
                 </label>
                 <div className="space-y-2">
                   {feels.map((f, i) => (
@@ -270,7 +272,7 @@ export default function OnboardingPage() {
                         className={inputClass}
                         value={c}
                         onChange={e => setCompetitors(prev => prev.map((v, idx) => idx === i ? e.target.value : v))}
-                        placeholder={`Competitor ${i + 1}`}
+                        placeholder={`Competitor ${i + 1} — e.g. Nike`}
                       />
                       {i > 0 && (
                         <button
@@ -313,12 +315,12 @@ export default function OnboardingPage() {
           </div>
         )}
 
-        {/* Step 3: Brand Design */}
+        {/* Step 3: Brand & Design */}
         {step === 3 && (
           <div className="space-y-6">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">Brand & design</h1>
-              <p className="text-gray-500 text-sm mt-1">Visual identity and voice — skip anything you don't have yet</p>
+              <p className="text-gray-500 text-sm mt-1">Visual identity and tone of voice — skip anything you don't have yet</p>
             </div>
 
             <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
@@ -343,12 +345,12 @@ export default function OnboardingPage() {
                 </div>
               </div>
               <div>
-                <label className={labelClass}>Brand themes / aesthetic</label>
+                <label className={labelClass}>Brand aesthetic / themes</label>
                 <input
                   className={inputClass}
                   value={form.brand_themes}
                   onChange={e => setForm(f => ({ ...f, brand_themes: e.target.value }))}
-                  placeholder="e.g. Minimalist, Luxury, Bold"
+                  placeholder="e.g. Minimalist, Luxury, Bold, Playful"
                 />
               </div>
               <div>
@@ -357,7 +359,7 @@ export default function OnboardingPage() {
                   className={inputClass}
                   value={form.brand_voice}
                   onChange={e => setForm(f => ({ ...f, brand_voice: e.target.value }))}
-                  placeholder="e.g. Professional but approachable, Playful"
+                  placeholder="e.g. Professional but approachable, Fun and energetic"
                 />
               </div>
               <div>

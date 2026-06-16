@@ -116,7 +116,8 @@ export default function ClientForm({ client }: Props) {
               className={inputClass}
               value={form.social_instagram}
               onChange={e => setForm(f => ({ ...f, social_instagram: e.target.value }))}
-              placeholder="@usuario"
+              placeholder="https://instagram.com/yourpage"
+              type="url"
             />
           </div>
           <div>
@@ -125,7 +126,8 @@ export default function ClientForm({ client }: Props) {
               className={inputClass}
               value={form.social_facebook}
               onChange={e => setForm(f => ({ ...f, social_facebook: e.target.value }))}
-              placeholder="@página"
+              placeholder="https://facebook.com/yourpage"
+              type="url"
             />
           </div>
           <div>
@@ -134,7 +136,8 @@ export default function ClientForm({ client }: Props) {
               className={inputClass}
               value={form.social_tiktok}
               onChange={e => setForm(f => ({ ...f, social_tiktok: e.target.value }))}
-              placeholder="@usuario"
+              placeholder="https://tiktok.com/@yourpage"
+              type="url"
             />
           </div>
           <div>
